@@ -15,6 +15,7 @@ export class AppComponent {
   twowaydata?:any="Miftah";
   twowaydata1?:any="Amin";
   employees:any[];
+  Position:string ="MIS Delveloper"
   constructor(){
     this.employees=[
       {code:'1',name:'amin',salary:85000,dob:'02/aug/1990'},

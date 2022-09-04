@@ -164,8 +164,18 @@ you typed {{twowaydata}}
   <span>chaining pipes</span><br />
   {{employees[0].dob |date:'medium' |uppercase}}<br>
   {{employees[0].dob |date:'fullDate'|lowercase}}<br>
-
 </p>
+  <span>string pipes</span><br>
+<ul>
+  <li>uppercase</li>
+  <li>lowercase</li>
+  <li>Titlecase</li>
+  <li>Slice starting-index> slice the input  from the index till the end</li>
+  <li>Slice start:end , slice the input from start till end</li>
+</ul>
+<p>{{Position |uppercase |slice :5}}</p>
+<p>{{Position |uppercase |slice :0:3}}</p>
+<p>{{Position |uppercase |slice :-3}}===> from last</p>
 </div>
 
 <router-outlet></router-outlet>
