@@ -178,6 +178,15 @@ you typed {{twowaydata}}
 <p>{{Position |uppercase |slice :5}}</p>
 <p>{{Position |uppercase |slice :0:3}}</p>
 <p>{{Position |uppercase |slice :-3}}===> from last</p>
+<P>json pipes conver value into json  |json</P>
+<div>
+  {{employees }}<br>
+  {{employees |json}}<br>
+  {{employees| slice :1 |json}}<br>
+  {{employees| slice :0:1 |json}}<br>
+  {{employees| slice :-1 |json}}<br>
+</div>
+
 </div>
 
 <router-outlet></router-outlet>
