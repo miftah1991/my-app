@@ -119,5 +119,8 @@ export class AppComponent {
     }
     return cssclass;
   }
+  onClick():void{
+    alert('event binding')
+  }
 
 }
