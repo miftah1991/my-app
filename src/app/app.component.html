@@ -113,13 +113,51 @@
       <td>class</td>
     </tr>
   </table>
-</div>
-<p>event binding:</p>
+  <p>event binding:</p>
 <button (click)="onClick()">click me</button>
 <p class="three">Two way data binding</p>
 Enter your name:  <input [value]="twowaydata"  (input)="setvalue($event)"  />
 you typed {{twowaydata}}
 <br>using NGModel
 <input [(ngModel)]="twowaydata1">  {{twowaydata1}}
+</div>
+<div>
+  <hr>
+<h3>Pipes</h3>
+<ul>
+  <li>used to transform data to desired output</li>
+  <li> using | operator we can apply</li>
+  <li> transform data before display in browser, we can create custom pipes</li>
+  <li> {{'test' | uppercase}}</li>
+  <li>built in (paramerterized, chaining) and custom pipes</li>
+</ul>
+<table border="1">
+  <tr>
+    <td>empcode</td>
+    <td>name</td>
+    <td>salary</td>
+    <td>salary</td>
+    <td>dob</td>
+    <td>dob -paramerterized pipes</td>
+  </tr>
+  <tr *ngFor="let e of employees">
+    <td>{{ e.code }}</td>
+    <td>{{ e.name | uppercase }}</td>
+    <td>{{e.salary |currency }}</td>
+    <td>{{e.salary |currency:'EUR' }}</td>
+    <td>{{e.dob | date }}</td>
+    <td>{{e.dob | date:"short" }}</td>
+  </tr>
+</table>
+<p>
+  {{employees[0].dob |date:'dd/MM/yyyy'}}<br>
+  {{employees[0].dob |date:'medium'}}<br>
+  {{employees[0].dob |date:'mediumTime'}}<br>
+  {{employees[0].dob |date:'short'}}<br>
+  {{employees[0].salary | currency:'USD'}}<br>
+  {{employees[0].salary | currency:'USD':true}}<br>
+  {{employees[0].salary | currency:'USD':true}}<br>
+</p>
+</div>
 
 <router-outlet></router-outlet>
