@@ -17,13 +17,15 @@ export class AppComponent {
   employees:any[];
   Position:string ="MIS Delveloper"
   percentage:number =50.2365566;
+
+  emp:any
   constructor(){
     this.employees=[
-      {code:'1',name:'amin',salary:85000,dob:'02/aug/1990'},
-      {code:'2',name:'khan',salary:1000,dob:'06/aug/1990'},
-      {code:'3',name:'ali',salary:85000,dob:'08/aug/1990'},
-      {code:'4',name:'jan',salary:32000,dob:'04/aug/1990'},
-      {code:'5',name:'ahmad',salary:17855,dob:'05/aug/1995'},
+      {code:'1',name:'amin',salary:85000,dob:'02/aug/1990',gender:'male'},
+      {code:'2',name:'khan',salary:1000,dob:'06/aug/1990',gender:'femlae'},
+      {code:'3',name:'ali',salary:85000,dob:'08/aug/1990',gender:'femlae'},
+      {code:'4',name:'jan',salary:32000,dob:'04/aug/1990',gender:'female'},
+      {code:'5',name:'ahmad',salary:17855,dob:'05/aug/1995',gender:'male'},
     ]
     this.users =['ahmad','khalid','omer']
     this.people=[

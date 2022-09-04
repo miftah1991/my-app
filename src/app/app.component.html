@@ -186,7 +186,19 @@ you typed {{twowaydata}}
   {{employees| slice :0:1 |json}}<br>
   {{employees| slice :-1 |json}}<br>
 </div>
-
+<p>Custome pipes: to create custom pipes we apply the @Pipe decorator to class (ng g pipe mypipe --flat)</p>
+<table border="1">
+  <tr>
+    <td>empcode</td>
+    <td>name</td>
+    <td>gender</td>
+  </tr>
+  <tr *ngFor="let e of employees">
+    <td>{{ e.code }}</td>
+    <td>{{ e.name | mypipe:e.gender }}</td>
+    <td>{{e.gender }}</td>
+  </tr>
+</table>
 </div>
 
 <router-outlet></router-outlet>
