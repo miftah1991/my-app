@@ -11,6 +11,7 @@ export class AppComponent {
   countrydetail:any[];
   people:any[];
   users:any[];
+  colspan:number=3;
   constructor(){
     this.users =['ahmad','khalid','omer']
     this.people=[

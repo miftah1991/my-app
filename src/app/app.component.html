@@ -94,4 +94,24 @@
 <p [ngClass]="{'three':false,'red':true}">using ngClass as Object</p>
 <div [ngClass]="getcssclass('mode')">using ngClass example with component method</div>
 </div>
+<hr>
+<div>
+  <h3>Data Binding</h3>
+  <p>to bind the view (html content) with controllers (componnet) field that whenever we display dynamic data on a view</p>
+  <p>component pass data to template/view and component list to events in template/view</p>
+  <p>one way data binding component to view(interpolation, property, style binding, class binding, attribute binding) and view to component(event binding)</p>
+  <p>interpolation  {{title}}</p>
+  <p> property binding--innerHTML O <span [innerText]="title"></span>OR IMAGE <img [src]="'http://mis.dabs.af/dabs.png'" [height]="200" /></p>
+  <p>attribute binding</p>
+  <table [attr.border]="colspan-2">
+    <tr>
+      <td [attr.colspan]="colspan">student details</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>name</td>
+      <td>class</td>
+    </tr>
+  </table>
+</div>
 <router-outlet></router-outlet>
