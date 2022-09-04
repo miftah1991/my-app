@@ -1,3 +1,21 @@
+.one{
+  color: #1976d2;
+}
+.two{
+  font-size: 30px;
+}
+
+.three{
+  color: green;
+}
+.four{
+  font-size: 15px;
+}
+.red{
+  color: red;
+}
+
+
 :host {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;

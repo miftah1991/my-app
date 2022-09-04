@@ -10,7 +10,9 @@ export class AppComponent {
   Students:any[];
   countrydetail:any[];
   people:any[];
+  users:any[];
   constructor(){
+    this.users =['ahmad','khalid','omer']
     this.people=[
       {name:'miftah'  ,country:'Af'},{name:'amin'  ,country:'Pk'},{name:'khan'  ,country:'UK'},{name:'Ibrahim'  ,country:'USA'},
     ]
@@ -107,6 +109,14 @@ export class AppComponent {
       default: return 'black';
     }
   }
-
+  getcssclass(flag:string){
+    let cssclass;
+    if(flag=='mode'){
+      cssclass ={'one':true,'two':true}
+    }else{
+      cssclass ={'three':true,'four':true}
+    }
+    return cssclass;
+  }
 
 }

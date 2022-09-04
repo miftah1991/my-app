@@ -78,4 +78,20 @@
     </li>
   </ul>
 </div>
+<hr>
+<div>
+  <h3>ngClass</h3>
+  <p>allow us to set the css class dynamically for a DOM elements</p>
+  <ul>
+    <li>ngClass with string</li>
+    <li>ngClass with array</li>
+    <li>ngClass with object</li>
+    <li>ngClass with component method</li>
+  </ul>
+<p [ngClass]="'one two'">using ngClass with string example</p>
+<p [ngClass]="['one', 'two']">using ngClass with Array example</p>
+<div *ngFor="let u of users" [ngClass]="['three', 'four']">{{u}}</div>
+<p [ngClass]="{'three':false,'red':true}">using ngClass as Object</p>
+<div [ngClass]="getcssclass('mode')">using ngClass example with component method</div>
+</div>
 <router-outlet></router-outlet>
