@@ -9,8 +9,11 @@ export class AppComponent {
   title = 'my-app';
   Students:any[];
   countrydetail:any[];
-  
+  people:any[];
   constructor(){
+    this.people=[
+      {name:'miftah'  ,country:'Af'},{name:'amin'  ,country:'Pk'},{name:'khan'  ,country:'UK'},{name:'Ibrahim'  ,country:'USA'},
+    ]
     this.countrydetail=[
       {
         country:'Af',
@@ -96,7 +99,14 @@ export class AppComponent {
   trackbystudentid(index:number,student:any):string{
     return student.studentid;
   }
-  
+  getcolor(country:string):string{
+    switch(country){
+      case 'Af': return 'green';
+      case 'UK': return 'green';
+      case 'USA': return 'red';
+      default: return 'black';
+    }
+  }
 
 
 }
