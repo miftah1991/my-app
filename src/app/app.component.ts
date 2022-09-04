@@ -12,6 +12,8 @@ export class AppComponent {
   people:any[];
   users:any[];
   colspan:number=3;
+  twowaydata?:any="Miftah";
+  twowaydata1?:any="Amin";
   constructor(){
     this.users =['ahmad','khalid','omer']
     this.people=[
@@ -122,5 +124,7 @@ export class AppComponent {
   onClick():void{
     alert('event binding')
   }
-
+  setvalue(event:any):void{
+    this.twowaydata = event.target.value;
+  }
 }

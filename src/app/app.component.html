@@ -116,5 +116,10 @@
 </div>
 <p>event binding:</p>
 <button (click)="onClick()">click me</button>
+<p class="three">Two way data binding</p>
+Enter your name:  <input [value]="twowaydata"  (input)="setvalue($event)"  />
+you typed {{twowaydata}}
+<br>using NGModel
+<input [(ngModel)]="twowaydata1">  {{twowaydata1}}
 
 <router-outlet></router-outlet>
