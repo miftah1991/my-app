@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-fundamentals',
+  templateUrl: './fundamentals.component.html',
+  styleUrls: ['./fundamentals.component.css']
 })
-export class AppComponent {
+export class FundamentalsComponent implements OnInit {
   title = 'my-app';
   Students:any[];
   countrydetail:any[];
@@ -26,7 +25,7 @@ export class AppComponent {
     <router-outlet></router-outlet>
   `;
   emp:any
-  constructor(private router:Router){
+  constructor() { 
     this.employees=[
       {code:'1',name:'amin',salary:85000,dob:'02/aug/1990',gender:'male'},
       {code:'2',name:'khan',salary:1000,dob:'06/aug/1990',gender:'femlae'},
@@ -120,6 +119,9 @@ export class AppComponent {
    },
     ]
   }
+
+  ngOnInit(): void {
+  }
   trackbystudentid(index:number,student:any):string{
     return student.studentid;
   }
@@ -145,8 +147,5 @@ export class AppComponent {
   }
   setvalue(event:any):void{
     this.twowaydata = event.target.value;
-  }
-  gotostudent(){
-    this.router.navigate(['/student']);
   }
 }

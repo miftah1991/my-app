@@ -1,0 +1,203 @@
+<div>
+    <h3>Foor Loop</h3>
+    <ul>
+      <li *ngFor="let student of Students; let i=index;let f = first;let l = last">
+         {{i+1}} {{student.name}} -{{f}}-{{l}}
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <div>
+    <h3> Track By</h3>
+    <table border="1">
+      <tr *ngFor="let s of Students;let i = index;trackBy:trackbystudentid">
+          <td>{{i+1}}</td>
+          <td>{{s.studentid}}</td>
+          <td>{{s.name}}</td>
+          <td>{{s.gender}}</td>
+          <td>{{s.Age}}</td>
+          <td>{{s.Course}}</td>
+      </tr>
+    </table> <br>
+    <button (click)="getmorestudents();"> Show More</button>
+  </div>
+  <hr>
+  <div>
+    <h3>Grouping with ngFor</h3>
+    <ul>
+      <li *ngFor="let c of countrydetail">
+        {{c.country}}
+        <ul>
+          <li *ngFor="let p of c.peoples">
+            {{p.name}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <div>
+    <h3>ngStyle</h3>
+    <div [ngStyle]="{'background-color':'green'}">ngStyle</div>
+    <ul>
+      <li *ngFor="let p of people">
+       <h6 [ngStyle]="{'color':getcolor(p.country)}">{{p.name}}-{{p.country}}</h6> 
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <div>
+    <h3>ngClass</h3>
+    <p>allow us to set the css class dynamically for a DOM elements</p>
+    <ul>
+      <li>ngClass with string</li>
+      <li>ngClass with array</li>
+      <li>ngClass with object</li>
+      <li>ngClass with component method</li>
+    </ul>
+  <p [ngClass]="'one two'">using ngClass with string example</p>
+  <p [ngClass]="['one', 'two']">using ngClass with Array example</p>
+  <div *ngFor="let u of users" [ngClass]="['three', 'four']">{{u}}</div>
+  <p [ngClass]="{'three':false,'red':true}">using ngClass as Object</p>
+  <div [ngClass]="getcssclass('mode')">using ngClass example with component method</div>
+  </div>
+  <hr>
+  <div>
+    <h3>Data Binding</h3>
+    <p>to bind the view (html content) with controllers (componnet) field that whenever we display dynamic data on a view</p>
+    <p>component pass data to template/view and component list to events in template/view</p>
+    <p>one way data binding component to view(interpolation, property, style binding, class binding, attribute binding) and view to component(event binding)</p>
+    <p>interpolation  {{title}}</p>
+    <p> property binding--innerHTML O <span [innerText]="title"></span>OR IMAGE <img [src]="'http://mis.dabs.af/dabs.png'" [height]="200" /></p>
+    <p>attribute binding</p>
+    <table [attr.border]="colspan-2">
+      <tr>
+        <td [attr.colspan]="colspan">student details</td>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>class</td>
+      </tr>
+    </table>
+    <p>event binding:</p>
+  <button (click)="onClick()">click me</button>
+  <p class="three">Two way data binding</p>
+  Enter your name:  <input [value]="twowaydata"  (input)="setvalue($event)"  />
+  you typed {{twowaydata}}
+  <br>using NGModel
+  <input [(ngModel)]="twowaydata1">  {{twowaydata1}}
+  </div>
+  <div>
+    <hr>
+  <h3>Pipes</h3>
+  <ul>
+    <li>used to transform data to desired output</li>
+    <li> using | operator we can apply</li>
+    <li> transform data before display in browser, we can create custom pipes</li>
+    <li> {{'test' | uppercase}}</li>
+    <li>built in (paramerterized, chaining) and custom pipes</li>
+    <li>chaining pipes is assign multiple pipes at once</li>
+  </ul>
+  <table border="1">
+    <tr>
+      <td>empcode</td>
+      <td>name</td>
+      <td>salary</td>
+      <td>salary</td>
+      <td>dob</td>
+      <td>dob -paramerterized pipes</td>
+    </tr>
+    <tr *ngFor="let e of employees">
+      <td>{{ e.code }}</td>
+      <td>{{ e.name | uppercase }}</td>
+      <td>{{e.salary |currency }}</td>
+      <td>{{e.salary |currency:'EUR' }}</td>
+      <td>{{e.dob | date }}</td>
+      <td>{{e.dob | date:"short" }}</td>
+    </tr>
+  </table>
+  <p>
+    {{employees[0].dob |date:'dd/MM/yyyy'}}<br>
+    {{employees[0].dob |date:'medium'}}<br>
+    {{employees[0].dob |date:'fullDate'}}<br>
+    {{employees[0].dob |date:'mediumTime'}}<br>
+    {{employees[0].dob |date:'short'}}<br>
+    {{employees[0].salary | currency:'USD'}}<br>
+    {{employees[0].salary | currency:'USD':true}}<br>
+    {{employees[0].salary | currency:'AFN':true}}<br>
+    {{percentage | percent:'2.4-8'}}=======>percentage<br>
+    {{percentage | number}}=======>decimal<br>
+  </p>
+  <p>
+    <span>chaining pipes</span><br />
+    {{employees[0].dob |date:'medium' |uppercase}}<br>
+    {{employees[0].dob |date:'fullDate'|lowercase}}<br>
+  </p>
+    <span>string pipes</span><br>
+  <ul>
+    <li>uppercase</li>
+    <li>lowercase</li>
+    <li>Titlecase</li>
+    <li>Slice starting-index> slice the input  from the index till the end</li>
+    <li>Slice start:end , slice the input from start till end</li>
+  </ul>
+  <p>{{Position |uppercase |slice :5}}</p>
+  <p>{{Position |uppercase |slice :0:3}}</p>
+  <p>{{Position |uppercase |slice :-3}}===> from last</p>
+  <P>json pipes conver value into json  |json</P>
+  <div>
+    {{employees }}<br>
+    {{employees |json}}<br>
+    {{employees| slice :1 |json}}<br>
+    {{employees| slice :0:1 |json}}<br>
+    {{employees| slice :-1 |json}}<br>
+  </div>
+  <p>Custome pipes: to create custom pipes we apply the @Pipe decorator to class (ng g pipe mypipe --flat)</p>
+  <table border="1">
+    <tr>
+      <td>empcode</td>
+      <td>name</td>
+      <td>gender</td>
+    </tr>
+    <tr *ngFor="let e of employees">
+      <td>{{ e.code }}</td>
+      <td>{{ e.name | mypipe:e.gender }}</td>
+      <td>{{e.gender }}</td>
+    </tr>
+  </table>
+  </div>
+  <hr>
+  <div>
+    <h3>Routing</h3>
+    <ul>
+      <li>navigating between page and display appropriated component/page on broswer</li>
+      <li>angular focus on SPA</li>
+      <li>help to navigate across the application form one view to another view</li>
+      <li>router check routes array to find the path</li>
+      <li>anngualr router is official library of angular</li>
+      <li>angular router redirect url, resovle date, run script when page aciveate or deactivate and lazy loading</li>
+  
+    </ul>
+    <p>steps, How angular router works</p>
+    <ul>
+      <li>step: 1 parse the url and make tree of it</li>
+      / divide ,() secondary rout : named router outlet ; matrix parameter ? query string # fragement // multiple secondary route
+      <li>redirect if there is any redirect so navigate it</li>
+      local redirect the back slash is not fount (/) replace single url segment
+      absoulate redirect, start with / replace the entire url
+      <li>step 3:identify the router state find the router segment from tree</li>
+      <li>step 4: Guard check the authentication </li>
+      <li>step 5 resovle run the resovler</li>
+      <li>step 6 activate the angular component</li>
+      <li>step 7 manage,listen for URL Change</li>
+    </ul>
+    <p>router-outlet</p>
+    <ul>
+      <li>is a dynamic component that the router uses to display view based on router navigation</li>
+      <li>the role of outlet is to mark where the router displays a view</li>
+    </ul>
+    {{snippets}}
+    ng generate module app-routing --flat --moudule=app is used to generate the angular router if we didnt create it while creating the project
+    
+  </div>
