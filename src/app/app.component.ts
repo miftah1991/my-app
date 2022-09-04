@@ -16,6 +16,7 @@ export class AppComponent {
   twowaydata1?:any="Amin";
   employees:any[];
   Position:string ="MIS Delveloper"
+  percentage:number =50.2365566;
   constructor(){
     this.employees=[
       {code:'1',name:'amin',salary:85000,dob:'02/aug/1990'},
