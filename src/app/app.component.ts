@@ -14,7 +14,15 @@ export class AppComponent {
   colspan:number=3;
   twowaydata?:any="Miftah";
   twowaydata1?:any="Amin";
+  employees:any[];
   constructor(){
+    this.employees=[
+      {code:'1',name:'amin',salary:85000,dob:'02/aug/1990'},
+      {code:'2',name:'khan',salary:1000,dob:'06/aug/1990'},
+      {code:'3',name:'ali',salary:85000,dob:'08/aug/1990'},
+      {code:'4',name:'jan',salary:32000,dob:'04/aug/1990'},
+      {code:'5',name:'ahmad',salary:17855,dob:'05/aug/1995'},
+    ]
     this.users =['ahmad','khalid','omer']
     this.people=[
       {name:'miftah'  ,country:'Af'},{name:'amin'  ,country:'Pk'},{name:'khan'  ,country:'UK'},{name:'Ibrahim'  ,country:'USA'},

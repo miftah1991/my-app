@@ -130,6 +130,7 @@ you typed {{twowaydata}}
   <li> transform data before display in browser, we can create custom pipes</li>
   <li> {{'test' | uppercase}}</li>
   <li>built in (paramerterized, chaining) and custom pipes</li>
+  <li>chaining pipes is assign multiple pipes at once</li>
 </ul>
 <table border="1">
   <tr>
@@ -152,11 +153,18 @@ you typed {{twowaydata}}
 <p>
   {{employees[0].dob |date:'dd/MM/yyyy'}}<br>
   {{employees[0].dob |date:'medium'}}<br>
+  {{employees[0].dob |date:'fullDate'}}<br>
   {{employees[0].dob |date:'mediumTime'}}<br>
   {{employees[0].dob |date:'short'}}<br>
   {{employees[0].salary | currency:'USD'}}<br>
   {{employees[0].salary | currency:'USD':true}}<br>
   {{employees[0].salary | currency:'USD':true}}<br>
+</p>
+<p>
+  <span>chaining pipes</span><br />
+  {{employees[0].dob |date:'medium' |uppercase}}<br>
+  {{employees[0].dob |date:'fullDate'|lowercase}}<br>
+
 </p>
 </div>
 
