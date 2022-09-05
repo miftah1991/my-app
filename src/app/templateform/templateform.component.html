@@ -5,16 +5,17 @@
             <form #regForm="ngForm" (ngSubmit)="Register(regForm)">
                     <h2>Registration Page</h2>
                     <div class="form-group p-2">
-                        <input type="text" class="form-control" name="firstname" id="firstaname" placeholder="First Name" ngModel />
+                        <input type="text" class="form-control" name="firstname" id="firstaname" required placeholder="First Name" ngModel />
                     </div>
                     <div class="form-group p-2">
-                        <input type="text"  class="form-control"  name="lastname" id="lastname" placeholder="Last Name" ngModel />
+                        <input type="text"  class="form-control"  name="lastname" id="lastname"  required placeholder="Last Name" ngModel />
                     </div>
                     <div class="form-group p-2">
-                        <input type="text" class="form-control"  name="email" id="email" placeholder="Email" ngModel />
+                        <input type="email" email class="form-control"  name="email" id="email" required placeholder="Email" ngModel #email="ngModel" />
+                        <span class="help-box p-2" *ngIf="email.touched && !email.valid"> please enter valid email</span>
                     </div>
                     <div class="pt-3 text-center">
-                        <button type="submit" class="btn btn-primary" id="register" > Submit </button>
+                        <button type="submit" class="btn btn-primary" id="register" [disabled]="!regForm.valid"> Submit </button>
                     </div>
             </form>
         </div>
