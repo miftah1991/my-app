@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,NgForm ,Validators} from '@angular/forms';
+import { formsignup } from './formsignup';
 @Component({
   selector: 'app-reactform',
   templateUrl: './reactform.component.html',
@@ -22,6 +23,27 @@ export class ReactformComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    //Single Controle  Form Control
+      this.signupForm.get('fname')?.valueChanges.subscribe( 
+        fn =>{console.log('fname is changed to'+fn)}
+      )
+      //Complete form Form Group
+      this.signupForm.valueChanges.subscribe((uname:formsignup) =>{
+        console.log('fname is change'+uname.fname);
+        console.log('lname is change'+uname.lname);
+        console.log('email is change'+uname.emailid);
+        console.log('password is change'+uname.pass);
+        
+      })
+      //Status Check
+      this.signupForm.get('fname')?.statusChanges.subscribe(
+        fn =>{console.log("Status:"+fn);}
+      )
+      //Check status of form
+      this.signupForm.statusChanges.subscribe(
+        fn =>{console.log("Form Status:"+fn);}
+      )
+      //C
   }
   PostData(signupForm:any){
     this.firstName = signupForm.controls.fname.value;

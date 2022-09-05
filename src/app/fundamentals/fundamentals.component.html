@@ -276,3 +276,15 @@
       is not required to set value to all controls
     </p>
   </div>
+  <hr>
+  <div>
+    <h3>valuechanges() and statuschange()</h3>
+    <p>these are properties of formcontrol, form array and form Group classes, it return observable instance and we subscribe to get data</p>
+    <p>value changes emit an eventy every time when the value of control change either using ui or programmaticallay</p>
+    <ul>
+      <li>if we subscribe valuechanges of a form control instance we get latest value of that control whenever there is any change</li>
+      <li>if we subscribe valuechanges of a form array instance we get latest value of that array controls whenever there is any change</li>
+      <li>if we subscribe valuechanges of a form group instance we get latest value of the form controls whenever there is a change in any control of them </li>
+    </ul>
+    <p>status change when the validation status of the control </p>
+  </div>
