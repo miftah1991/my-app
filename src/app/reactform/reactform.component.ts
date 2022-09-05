@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl,FormBuilder,NgForm } from '@angular/forms';
+import { FormGroup,FormControl,FormBuilder,NgForm ,Validators} from '@angular/forms';
 @Component({
   selector: 'app-reactform',
   templateUrl: './reactform.component.html',
@@ -14,11 +14,10 @@ export class ReactformComponent implements OnInit {
   password:string="";
   constructor(private formbuilder:FormBuilder) {
     this.signupForm=formbuilder.group({
-      fname:new FormControl(),
-      lname:new FormControl(),
-      emailid:new FormControl(),
-      pass:new FormControl()
-
+      fname:new FormControl(this.firstName, Validators.required),
+      lname:['',Validators.required],
+      emailid:['',Validators.email],
+      pass:['',Validators.required]
     })
    }
 
