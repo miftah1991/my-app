@@ -1,0 +1,46 @@
+<br><br><br>
+
+<h2>welcome {{title}}</h2>
+
+<form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" name="uname" [ngModel]="user.name" required #uname="ngModel">
+                <div *ngIf="uname.invalid" class="error">Name is required</div>
+            </td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" value="male" name="gender" required [ngModel]="user.gender" #gender="ngModel"  /> Male
+                <input type="radio" value="female" name="gender" required [ngModel]="user.gender" #gender="ngModel"  /> Female
+
+                <div *ngIf="gender.invalid" class="error">gender is required</div>
+            </td>
+        </tr>
+        <tr>
+            <td>are you married</td>
+            <td>
+                <input type="checkbox" name="married" id="married"  [ngModel]="user.isMarried"  />
+            </td>
+        </tr>
+        <tr>
+            <td>Accept Term and condition</td>
+            <td>
+                <input type="checkbox" name="isTCAccepted" id="isTCAccepted" [ngModel]="user.isTCAccepted" required   #isTCAccepted="ngModel"/>
+                <div *ngIf="isTCAccepted.invalid" class="error">gender is required</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary m-2" type="submit">Submit</button>
+                <button (click)="setDefaultValues(userForm)" class="btn btn-primary "  >setDefaul</button>
+                <button (click)="resetForm(userForm)" class="btn btn-danger m-3"  >Reset Form</button>
+            </td>
+        </tr>
+    </table>
+
+</form>

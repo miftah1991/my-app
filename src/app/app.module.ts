@@ -12,6 +12,7 @@ import { TemplateformComponent } from './templateform/templateform.component';
 import { ReactformComponent } from './reactform/reactform.component';
 import { NestedFormArrayComponent } from './nested-form-array/nested-form-array.component';
 import { DynamicRowComponent } from './dynamic-row/dynamic-row.component';
+import { CheckBoxRadioComponent } from './check-box-radio/check-box-radio.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DynamicRowComponent } from './dynamic-row/dynamic-row.component';
     TemplateformComponent,
     ReactformComponent,
     NestedFormArrayComponent,
-    DynamicRowComponent
+    DynamicRowComponent,
+    CheckBoxRadioComponent
   ],
   imports: [
     BrowserModule,
