@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MypipePipe } from './mypipe.pipe';
 import { StudentComponent } from './student/student.component';
 import { FundamentalsComponent } from './fundamentals/fundamentals.component';
+import { MaincomponentComponent } from './maincomponent/maincomponent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MypipePipe,
     StudentComponent,
-    FundamentalsComponent
+    FundamentalsComponent,
+    MaincomponentComponent
   ],
   imports: [
     BrowserModule,

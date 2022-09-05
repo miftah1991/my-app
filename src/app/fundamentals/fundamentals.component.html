@@ -199,5 +199,16 @@
     </ul>
     {{snippets}}
     ng generate module app-routing --flat --moudule=app is used to generate the angular router if we didnt create it while creating the project
-    
+    <p>redirect route</p>
+    <p>
+        this route is used for default reouts mean when the app is started the first URL which will opened is this route
+        
+    </p>
+    <pre>
+        <code>
+        path :'', redirectTo:'main',pathMatch:'full',
+        path :'main',component:MaincomponentComponent
+        </code>
+    </pre>
+    <p>wild card route: used for page not found, if the component is not exist this route will be hitted</p>
   </div>
