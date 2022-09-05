@@ -10,6 +10,8 @@ import { MaincomponentComponent } from './maincomponent/maincomponent.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TemplateformComponent } from './templateform/templateform.component';
 import { ReactformComponent } from './reactform/reactform.component';
+import { NestedFormArrayComponent } from './nested-form-array/nested-form-array.component';
+import { DynamicRowComponent } from './dynamic-row/dynamic-row.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ReactformComponent } from './reactform/reactform.component';
     MaincomponentComponent,
     PageNotFoundComponent,
     TemplateformComponent,
-    ReactformComponent
+    ReactformComponent,
+    NestedFormArrayComponent,
+    DynamicRowComponent
   ],
   imports: [
     BrowserModule,
