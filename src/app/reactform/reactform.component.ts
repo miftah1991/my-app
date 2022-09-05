@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl,FormBuilder,NgForm ,Validators} from '@angular/forms';
+import { FormGroup,FormControl,FormBuilder,NgForm ,Validators, FormArray} from '@angular/forms';
 import { formsignup } from './formsignup';
 @Component({
   selector: 'app-reactform',
@@ -43,7 +43,18 @@ export class ReactformComponent implements OnInit {
       this.signupForm.statusChanges.subscribe(
         fn =>{console.log("Form Status:"+fn);}
       )
-      //C
+
+      
+      //Form Array
+      const arr = new FormArray([
+        new FormControl('md',Validators.minLength(2)),
+        new FormControl('Amin')
+      ]);
+      console.log(arr.value);
+      console.log(arr.status);
+      // to set value to an array
+      arr.setValue(['khan','jan'])
+      console.log(arr.value);
   }
   PostData(signupForm:any){
     this.firstName = signupForm.controls.fname.value;
