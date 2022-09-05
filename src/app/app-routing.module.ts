@@ -4,11 +4,13 @@ import { FundamentalsComponent } from './fundamentals/fundamentals.component';
 import { MaincomponentComponent } from './maincomponent/maincomponent.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StudentComponent } from './student/student.component';
+import { TemplateformComponent } from './templateform/templateform.component';
 const routes: Routes = [
   {path :'', redirectTo:'main',pathMatch:'full'},
   {path :'main',component:MaincomponentComponent},
   {path :'student',component:StudentComponent},
   {path :'fundamentals',component:FundamentalsComponent},
+  {path :'templateform',component:TemplateformComponent},
   {path :'**',component:PageNotFoundComponent},
 
 ];
