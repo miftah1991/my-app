@@ -30,5 +30,34 @@ export class ReactformComponent implements OnInit {
     console.log(signupForm.controls);
     
   }
-
+  PostData1(){
+    this.firstName = this.signupForm.get('fname')?.value;
+    this.lastName = this.signupForm.get('lname')?.value;
+    this.email = this.signupForm.get('email')?.value;
+    console.log(this.firstName+'-----'+this.lastName);
+    console.log(this.signupForm.value);
+    
+    
+  }
+  resetForm(){
+    //this.signupForm.reset();
+    this.signupForm.reset({
+      fname:'Miftah',
+      lname:'Amin'
+    })
+  }
+  fillData(){
+    this.signupForm.setValue({
+      fname:'Miftah',
+      lname:'Amin',
+      emailid:'miftah.amin1991@gmail.com',
+      pass:'1111'
+    });
+  }
+  patchData(){
+    this.signupForm.patchValue({
+      fname:'Miftah',
+      lname:'Amin',
+    });
+  }
 }

@@ -18,7 +18,10 @@
                     <input type="password" formControlName="pass" placeholder="enter your password" class="form-control">
                 </div>
                 <div class="text-center p-2">
-                    <input type="submit" value="Post Data" [disabled]="!signupForm.valid" class="btn btn-primary" >
+                    <button type="button" (click)="PostData1()" [disabled]="!signupForm.valid" class="btn btn-primary m-3" >Post Data</button>
+                    <button type="button" (click)="resetForm()" class="btn btn-danger">Reset Data</button>
+                    <button type="button" (click)="fillData()" class="btn btn-success m-3">Fill Data</button>
+                    <button type="button" (click)="patchData()" class="btn btn-success m-3">Patch Data</button>
                 </div>
 
             </form>
