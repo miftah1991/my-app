@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MypipePipe } from './mypipe.pipe';
@@ -9,6 +9,7 @@ import { FundamentalsComponent } from './fundamentals/fundamentals.component';
 import { MaincomponentComponent } from './maincomponent/maincomponent.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TemplateformComponent } from './templateform/templateform.component';
+import { ReactformComponent } from './reactform/reactform.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,14 @@ import { TemplateformComponent } from './templateform/templateform.component';
     FundamentalsComponent,
     MaincomponentComponent,
     PageNotFoundComponent,
-    TemplateformComponent
+    TemplateformComponent,
+    ReactformComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

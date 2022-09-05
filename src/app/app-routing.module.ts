@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FundamentalsComponent } from './fundamentals/fundamentals.component';
 import { MaincomponentComponent } from './maincomponent/maincomponent.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ReactformComponent } from './reactform/reactform.component';
 import { StudentComponent } from './student/student.component';
 import { TemplateformComponent } from './templateform/templateform.component';
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path :'student',component:StudentComponent},
   {path :'fundamentals',component:FundamentalsComponent},
   {path :'templateform',component:TemplateformComponent},
+  {path :'reactform',component:ReactformComponent},
   {path :'**',component:PageNotFoundComponent},
 
 ];
