@@ -7,6 +7,7 @@ import { MypipePipe } from './mypipe.pipe';
 import { StudentComponent } from './student/student.component';
 import { FundamentalsComponent } from './fundamentals/fundamentals.component';
 import { MaincomponentComponent } from './maincomponent/maincomponent.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MaincomponentComponent } from './maincomponent/maincomponent.component'
     MypipePipe,
     StudentComponent,
     FundamentalsComponent,
-    MaincomponentComponent
+    MaincomponentComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
