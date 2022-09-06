@@ -13,6 +13,9 @@ import { ReactformComponent } from './reactform/reactform.component';
 import { NestedFormArrayComponent } from './nested-form-array/nested-form-array.component';
 import { DynamicRowComponent } from './dynamic-row/dynamic-row.component';
 import { CheckBoxRadioComponent } from './check-box-radio/check-box-radio.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButton, MatButtonModule } from '@angular/material/button'
+import { MatToolbar, MatToolbarModule, } from '@angular/material/toolbar'
 
 @NgModule({
   declarations: [
@@ -26,13 +29,15 @@ import { CheckBoxRadioComponent } from './check-box-radio/check-box-radio.compon
     ReactformComponent,
     NestedFormArrayComponent,
     DynamicRowComponent,
-    CheckBoxRadioComponent
+    CheckBoxRadioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
