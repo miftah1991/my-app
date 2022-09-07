@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AngMaterialComponent } from './ang-material/ang-material.component';
 import { CheckBoxRadioComponent } from './check-box-radio/check-box-radio.component';
 import { DynamicRowComponent } from './dynamic-row/dynamic-row.component';
 import { FundamentalsComponent } from './fundamentals/fundamentals.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path :'nestedFormArray',component:NestedFormArrayComponent},
   {path :'dynamicrow',component:DynamicRowComponent},
   {path :'checkradio',component:CheckBoxRadioComponent},
+  {path :'ngmaterial',component:AngMaterialComponent},
   {path :'**',component:PageNotFoundComponent},
 
 ];

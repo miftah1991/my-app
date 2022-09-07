@@ -15,8 +15,10 @@ import { DynamicRowComponent } from './dynamic-row/dynamic-row.component';
 import { CheckBoxRadioComponent } from './check-box-radio/check-box-radio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButton, MatButtonModule } from '@angular/material/button'
-import { MatToolbar, MatToolbarModule, } from '@angular/material/toolbar'
-
+import { MatToolbar, MatToolbarModule, } from '@angular/material/toolbar';
+import { AngMaterialComponent } from './ang-material/ang-material.component'
+import {MatSliderModule} from '@angular/material/slider'
+import {MatBadgeModule} from '@angular/material/badge'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { MatToolbar, MatToolbarModule, } from '@angular/material/toolbar'
     NestedFormArrayComponent,
     DynamicRowComponent,
     CheckBoxRadioComponent,
+    AngMaterialComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,10 @@ import { MatToolbar, MatToolbarModule, } from '@angular/material/toolbar'
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
