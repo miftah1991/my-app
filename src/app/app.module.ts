@@ -19,6 +19,16 @@ import { MatToolbar, MatToolbarModule, } from '@angular/material/toolbar';
 import { AngMaterialComponent } from './ang-material/ang-material.component'
 import {MatSliderModule} from '@angular/material/slider'
 import {MatBadgeModule} from '@angular/material/badge'
+import {MatCardModule} from '@angular/material/card'
+import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatDatepickerModule} from '@angular/material/datepicker'
+import {MatRadioModule} from '@angular/material/radio'
+import {MatSelectModule} from '@angular/material/select'
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +54,11 @@ import {MatBadgeModule} from '@angular/material/badge'
     BrowserAnimationsModule,
     MatSliderModule,
     MatBadgeModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatRadioModule,MatSelectModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
