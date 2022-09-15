@@ -25,7 +25,7 @@ import {MatInputModule} from '@angular/material/input'
 import {MatDatepickerModule} from '@angular/material/datepicker'
 import {MatRadioModule} from '@angular/material/radio'
 import {MatSelectModule} from '@angular/material/select'
-import { PersonModule } from './person/person.module';
+//import { PersonModule } from './person/person.module';
 
 
 
@@ -61,7 +61,7 @@ import { PersonModule } from './person/person.module';
     MatDatepickerModule,
     MatRadioModule,MatSelectModule,
     MatInputModule,
-    PersonModule
+    //PersonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

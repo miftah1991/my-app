@@ -7,7 +7,6 @@ import { FundamentalsComponent } from './fundamentals/fundamentals.component';
 import { MaincomponentComponent } from './maincomponent/maincomponent.component';
 import { NestedFormArrayComponent } from './nested-form-array/nested-form-array.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PersonaddComponent } from './person/personadd/personadd.component';
 import { ReactformComponent } from './reactform/reactform.component';
 import { StudentComponent } from './student/student.component';
 import { TemplateformComponent } from './templateform/templateform.component';
@@ -22,7 +21,10 @@ const routes: Routes = [
   {path :'dynamicrow',component:DynamicRowComponent},
   {path :'checkradio',component:CheckBoxRadioComponent},
   {path :'ngmaterial',component:AngMaterialComponent},
-  {path :'person',component:PersonaddComponent},
+  {
+    path :'person',
+     loadChildren: () => import('./person/person.module').then(m => m.PersonModule)
+  },
   {path :'**',component:PageNotFoundComponent},
 
 ];

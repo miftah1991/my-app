@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonaddComponent } from './personadd/personadd.component';
+import { PersonRoutingModule } from './person-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { PersonaddComponent } from './personadd/personadd.component';
     PersonaddComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PersonRoutingModule
   ]
 })
 export class PersonModule {
