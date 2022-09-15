@@ -1,109 +1,50 @@
-<mat-toolbar>
-  <h4>Registration form</h4>
+<mat-toolbar color="primary">
+  <span class="fill-remaining-space">My Reactive Form with Material</span>
 </mat-toolbar>
+<div class="container" *ngIf="!post; else forminfo" novalidate> 
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
 
-<mat-card>
-    <mat-card-title>
-      Angualr Material with reactive form
-    </mat-card-title>
-    <mat-card-content>
-      <form [formGroup]="regForm" (ngSubmit)="onFormSubmit(regForm)">
-        <table>
-          <tr>
-            <td>
-              <mat-form-field class="demo-full-width">
-                  <input type="text" formControlName="firstName" matInput placeholder="First Name">
-              </mat-form-field>
-              <mat-error>
-                  <!-- <span *ngIf="!regForm.get('firstName').valid && regForm.get('firstName').touched">First name is require</span> -->
-              </mat-error>
-            </td>
-            <td>
-              <mat-form-field class="demo-full-width">
-                  <input type="text" formControlName="lastName" matInput placeholder="Last Name">
-              </mat-form-field>
-              <mat-error>
-                  <!-- <span *ngIf="!regForm.get('lastName').valid && regForm.get('lastName').touched">lastName name is require</span> -->
-              </mat-error>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <mat-form-field class="demo-full-width">
-                  <textarea formControlName="Address" matInput placeholder="Address"></textarea>
-              </mat-form-field>
-              <mat-error>
-                <!-- <span *ngIf="!regForm.get('Address').valid && regForm.get('Address').touched">Address name is require</span> -->
-            </mat-error>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <mat-form-field appearance="fill">
-                <mat-label>Choose a date</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="DOB">
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
-<!--               
-              <mat-form-field>
-                  <input formControlName="DOB" matInput [matDatepicker]="picker", placeholder="please select a date">
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker touchUi="true"  #picker></mat-datepicker>
-              </mat-form-field> -->
-              <mat-error>
-                <!-- <span *ngIf="!regForm.get('DOB').valid && regForm.get('DOB').touched">DOB name is require</span> -->
-            </mat-error>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span>Gender</span>
-              <mat-radio-group formControlName="Gender">
-                <mat-radio-button value="Male">Male</mat-radio-button>
-                <mat-radio-button value="Male">Female </mat-radio-button>
-              </mat-radio-group>
-              <mat-error>
-                <!-- <span *ngIf="!regForm.get('Gender').valid && regForm.get('Gender').touched">Gender is require</span> -->
-            </mat-error>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <mat-form-field>
-                <mat-select formControlName="PlayList" placeholder="please select">
-                    <mat-option>--SELECT--</mat-option>
-                    <mat-option value="Angular">Angular </mat-option>
-                    <mat-option value="Reac">Reac </mat-option>
-                    <mat-option value="js">js </mat-option>
-                    <mat-option value="Angular9">Angular9 </mat-option>
-                </mat-select>
-              </mat-form-field>
-              <mat-error>
-                <!-- <span *ngIf="!regForm.get('PlayList').valid && regForm.get('PlayList').touched">Gender is require</span> -->
-            </mat-error>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <mat-form-field class="demo-full-width">
-                  <input formControlName="Email" matInput placeholder="Email" />
-                  <mat-hint>use like test@gmail.com</mat-hint>
-              </mat-form-field>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <mat-slide-toggle formControlName="IsAccepted" (change)="onChange($event)" >Accecpt Term and Condition</mat-slide-toggle>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <button mat-raised-button color="accent" [disabled]="!regForm.valid || IsAccepted==0">Submit</button>
-            </td>
-          </tr>
-        </table>
-      </form>
-    </mat-card-content>
-</mat-card>
+    <mat-form-field class="form-element">
+      <input matInput placeholder="Emailaddress" formControlName="email">
+      <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
+        {{ getErrorEmail() }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input matInput placeholder="Name" formControlName="name">
+      <mat-error *ngIf="!name.valid && name.touched">
+        {{ titleAlert }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <textarea matInput placeholder="Description" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5" formControlName="description"></textarea>
+      <mat-error *ngIf="!formGroup.controls['description'].valid && formGroup.controls['description'].touched">
+        Required field, must be between 5 and 10 characters.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input matInput placeholder="Password" formControlName="password">
+      <mat-hint>Choose a password of at least eight characters, one uppercase letter and one number</mat-hint>
+      <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
+        {{ getErrorPassword() }}
+      </mat-error>
+    </mat-form-field>
+
+    <div class="form-element">
+    </div>
+
+    <div class="form-element">
+      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Submit Form</button>
+    </div>
+
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="container">
+    {{ post | json }}
+  </div>
+</ng-template>

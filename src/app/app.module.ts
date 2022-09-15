@@ -14,13 +14,14 @@ import { NestedFormArrayComponent } from './nested-form-array/nested-form-array.
 import { DynamicRowComponent } from './dynamic-row/dynamic-row.component';
 import { CheckBoxRadioComponent } from './check-box-radio/check-box-radio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButton, MatButtonModule } from '@angular/material/button'
-import { MatToolbar, MatToolbarModule, } from '@angular/material/toolbar';
+import {  MatButtonModule } from '@angular/material/button'
+import {  MatToolbarModule, } from '@angular/material/toolbar';
 import { AngMaterialComponent } from './ang-material/ang-material.component'
 import {MatSliderModule} from '@angular/material/slider'
 import {MatBadgeModule} from '@angular/material/badge'
 import {MatCardModule} from '@angular/material/card'
 import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatInputModule} from '@angular/material/input'
 import {MatDatepickerModule} from '@angular/material/datepicker'
 import {MatRadioModule} from '@angular/material/radio'
 import {MatSelectModule} from '@angular/material/select'
@@ -57,8 +58,8 @@ import {MatSelectModule} from '@angular/material/select'
     MatCardModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatRadioModule,MatSelectModule
-
+    MatRadioModule,MatSelectModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
