@@ -31,7 +31,7 @@ const routes: Routes = [
   {
     path :'compay',
     loadChildren: () => import('./company/company.module').then(m => m.CompanyModule),
-    data: {preload:true}
+    data: {preload:true,delay:true}
   },
   {
     path :'address',
