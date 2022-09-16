@@ -12,6 +12,7 @@ import { StudentComponent } from './student/student.component';
 import { TemplateformComponent } from './templateform/templateform.component';
 // import {PreloadAllModules} from '@angular/router'
 import { CustomePreloadingStrategy } from './custom-preloading-strategy';
+import { BookComponent } from './book/book.component';
 const routes: Routes = [
   {path :'', redirectTo:'main',pathMatch:'full'},
   {path :'main',component:MaincomponentComponent},
@@ -37,6 +38,8 @@ const routes: Routes = [
     path :'address',
      loadChildren: () => import('./address/address.module').then(m => m.AddressModule)
   },
+  {path :'booksapi',component:BookComponent},
+
   {path :'**',component:PageNotFoundComponent},
 
 ];

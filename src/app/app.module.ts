@@ -27,10 +27,11 @@ import {MatRadioModule} from '@angular/material/radio'
 import {MatSelectModule} from '@angular/material/select'
 import { CustomePreloadingStrategy } from './custom-preloading-strategy';
 //import { PersonModule } from './person/person.module';
+import { BookService } from './book.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
-
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { TestData } from './Testdata';
 
 @NgModule({
   declarations: [
@@ -62,9 +63,11 @@ import { CustomePreloadingStrategy } from './custom-preloading-strategy';
     MatDatepickerModule,
     MatRadioModule,MatSelectModule,
     MatInputModule,
-    //PersonModule
+    //PersonModule,
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(TestData)
   ],
-  providers: [CustomePreloadingStrategy],
+  providers: [CustomePreloadingStrategy,BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
