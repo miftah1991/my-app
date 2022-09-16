@@ -25,6 +25,7 @@ import {MatInputModule} from '@angular/material/input'
 import {MatDatepickerModule} from '@angular/material/datepicker'
 import {MatRadioModule} from '@angular/material/radio'
 import {MatSelectModule} from '@angular/material/select'
+import { CustomePreloadingStrategy } from './custom-preloading-strategy';
 //import { PersonModule } from './person/person.module';
 
 
@@ -63,7 +64,7 @@ import {MatSelectModule} from '@angular/material/select'
     MatInputModule,
     //PersonModule
   ],
-  providers: [],
+  providers: [CustomePreloadingStrategy],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

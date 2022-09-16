@@ -10,7 +10,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ReactformComponent } from './reactform/reactform.component';
 import { StudentComponent } from './student/student.component';
 import { TemplateformComponent } from './templateform/templateform.component';
-import {PreloadAllModules} from '@angular/router'
+// import {PreloadAllModules} from '@angular/router'
+import { CustomePreloadingStrategy } from './custom-preloading-strategy';
 const routes: Routes = [
   {path :'', redirectTo:'main',pathMatch:'full'},
   {path :'main',component:MaincomponentComponent},
@@ -24,7 +25,17 @@ const routes: Routes = [
   {path :'ngmaterial',component:AngMaterialComponent},
   {
     path :'person',
-     loadChildren: () => import('./person/person.module').then(m => m.PersonModule)
+     loadChildren: () => import('./person/person.module').then(m => m.PersonModule),
+     data:{ preload :true}
+  },
+  {
+    path :'compay',
+    loadChildren: () => import('./company/company.module').then(m => m.CompanyModule),
+    data: {preload:true}
+  },
+  {
+    path :'address',
+     loadChildren: () => import('./address/address.module').then(m => m.AddressModule)
   },
   {path :'**',component:PageNotFoundComponent},
 
@@ -32,9 +43,12 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,{
-    preloadingStrategy: PreloadAllModules
+    preloadingStrategy: CustomePreloadingStrategy
   })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[
+    RouterModule
+  ]
 })
 export class AppRoutingModule { 
 
