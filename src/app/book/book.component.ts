@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../book';
+import { Hero } from '../Hero';
 import { BookService } from '../book.service';
 
 @Component({
@@ -9,19 +9,23 @@ import { BookService } from '../book.service';
 })
 export class BookComponent implements OnInit {
   title :string ='in memory web api';
-  softtBook:Book[];
+  //softtBook:Book[];
+  heroes: Hero[] = [];
   constructor(public bookService:BookService) { }
-  ngOnInit(): void {
-    this.getSoftBooks();
-    
+  ngOnInit() {
+    this.getHeroes();
   }
-  getSoftBooks(){
-    this.bookService.getBooksFromStore().subscribe(
-      books=>this.softtBook=books
-    )
-    console.log(this.softtBook);
-    
+  getHeroes(): void {
+    this.bookService.getHeroes()
+    .subscribe(heroes => this.heroes = heroes);
   }
+  // getSoftBooks(){
+  //   this.bookService.getBooksFromStore().subscribe(
+  //     books=>this.softtBook=books
+  //   )
+  //   console.log(this.softtBook);
+    
+  // }
  
 
 }
