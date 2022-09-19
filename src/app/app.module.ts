@@ -28,7 +28,7 @@ import {MatSelectModule} from '@angular/material/select'
 import { CustomePreloadingStrategy } from './custom-preloading-strategy';
 //import { PersonModule } from './person/person.module';
 import { BookService } from './book.service';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { HttpClientModule } from '@angular/common/http';
 import { TestData } from './Testdata';
@@ -65,7 +65,7 @@ import { TestData } from './Testdata';
     MatInputModule,
     //PersonModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(TestData)
+    HttpClientInMemoryWebApiModule.forRoot(TestData,{dataEncapsulation:false})
   ],
   providers: [CustomePreloadingStrategy,BookService],
   bootstrap: [AppComponent]

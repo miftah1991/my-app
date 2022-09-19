@@ -24,21 +24,22 @@ const routes: Routes = [
   {path :'dynamicrow',component:DynamicRowComponent},
   {path :'checkradio',component:CheckBoxRadioComponent},
   {path :'ngmaterial',component:AngMaterialComponent},
-  {
-    path :'person',
-     loadChildren: () => import('./person/person.module').then(m => m.PersonModule),
-     data:{ preload :true}
-  },
-  {
-    path :'compay',
-    loadChildren: () => import('./company/company.module').then(m => m.CompanyModule),
-    data: {preload:true,delay:true}
-  },
-  {
-    path :'address',
-     loadChildren: () => import('./address/address.module').then(m => m.AddressModule)
-  },
   {path :'booksapi',component:BookComponent},
+  // {
+  //   path :'person',
+  //    loadChildren: () => import('./person/person.module').then(m => m.PersonModule),
+  //    data:{ preload :true}
+  // },
+  // {
+  //   path :'compay',
+  //   loadChildren: () => import('./company/company.module').then(m => m.CompanyModule),
+  //   data: {preload:true,delay:true}
+  // },
+  // {
+  //   path :'address',
+  //    loadChildren: () => import('./address/address.module').then(m => m.AddressModule)
+  // },
+ 
 
   {path :'**',component:PageNotFoundComponent},
 
