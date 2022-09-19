@@ -21,3 +21,16 @@
         </div>
     </div>
 </div>
+
+
+<h2>My Heroes</h2>
+<table border="1" [cellSpacing]="1" class="table container">
+  <tr>
+    <td>empcode</td>
+    <td>name</td>
+  </tr>
+  <tr *ngFor="let e of heroes">
+    <td>{{ e.id }}</td>
+    <td>{{ e.name }}</td>
+  </tr>
+</table>

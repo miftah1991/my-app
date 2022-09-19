@@ -1,5 +1,16 @@
 <h2>My Heroes</h2>
-
+<table border="1" [cellSpacing]="1">
+  <tr>
+    <td>empcode</td>
+    <td>name</td>
+    <td>gender</td>
+  </tr>
+  <tr *ngFor="let e of employees">
+    <td>{{ e.code }}</td>
+    <td>{{ e.name }}</td>
+    <td>{{e.gender }}</td>
+  </tr>
+</table>
 <div>
   <label for="new-hero">Hero name: </label>
   <input id="new-hero" #heroName />
@@ -11,7 +22,7 @@
 </div>
 {{heroes[0].name}}
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of softherons$ |async">
     <a >
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>

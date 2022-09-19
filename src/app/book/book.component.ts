@@ -16,7 +16,16 @@ export class BookComponent implements OnInit {
   title :string ='in memory web api';
   //softtBook:Book[];
   heroes: Hero[] = [];
-  constructor(public bookService:BookService) { }
+  employees:any[];
+  constructor(public bookService:BookService) {
+    this.employees=[
+      {code:'1',name:'amin',salary:85000,dob:'02/aug/1990',gender:'male'},
+      {code:'2',name:'khan',salary:1000,dob:'06/aug/1990',gender:'femlae'},
+      {code:'3',name:'ali',salary:85000,dob:'08/aug/1990',gender:'femlae'},
+      {code:'4',name:'jan',salary:32000,dob:'04/aug/1990',gender:'female'},
+      {code:'5',name:'ahmad',salary:17855,dob:'05/aug/1995',gender:'male'},
+    ]
+   }
   ngOnInit() {
     this.getHeroes();
     
