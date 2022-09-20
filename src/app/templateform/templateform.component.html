@@ -34,3 +34,8 @@
     <td>{{ e.name }}</td>
   </tr>
 </table>
+<h3 *ngIf="hero;else loading">Single Hero {{hero.name }}  </h3>
+
+<ng-template #loading>
+    <img src="assets/images/loading.gif" />
+</ng-template>

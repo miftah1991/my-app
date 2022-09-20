@@ -9,21 +9,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./templateform.component.css']
 })
 export class TemplateformComponent implements OnInit {
-  employees:any[];
   heroes: Hero[] = [];
   softherons$:Observable<any>;
+  hero: Hero | undefined;
   constructor( public bookService:BookService) { 
-    this.employees=[
-      {code:'1',name:'amin',salary:85000,dob:'02/aug/1990',gender:'male'},
-      {code:'2',name:'khan',salary:1000,dob:'06/aug/1990',gender:'femlae'},
-      {code:'3',name:'ali',salary:85000,dob:'08/aug/1990',gender:'femlae'},
-      {code:'4',name:'jan',salary:32000,dob:'04/aug/1990',gender:'female'},
-      {code:'5',name:'ahmad',salary:17855,dob:'05/aug/1995',gender:'male'},
-    ]
   }
-
   ngOnInit(): void {
     this.getHeroes();
+    this.getHero();
   }
   //get data using async pipe
   getSoftHeros():void{
@@ -32,8 +25,13 @@ export class TemplateformComponent implements OnInit {
   getHeroes(): void {
     this.bookService.getHeroes()
     .subscribe(heroes => this.heroes = heroes);
-    console.log(this.heroes);
+    //console.log(this.heroes);
   }
+  getHero(): void {
+    this.bookService.getHero(12)
+      .subscribe(hero => this.hero = hero);
+  }
+
   Register(regForm:any){
     var firstname=regForm.controls.firstname.value;
     console.log(firstname);
