@@ -12,6 +12,7 @@ export class TemplateformComponent implements OnInit {
   heroes: Hero[] = [];
   softherons$:Observable<any>;
   hero: Hero | undefined;
+  topHero :Observable<string>;
   constructor( public bookService:BookService) { 
   }
   ngOnInit(): void {
